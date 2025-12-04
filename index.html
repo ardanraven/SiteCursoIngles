@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inglês de Bolso - Kit de Sobrevivência</title>
+    <meta name="description" content="O inglês prático que você precisa para emergências reais.">
+    
+    <!-- Fonte Inter (Google Fonts) para ficar bonito e legível -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Estilização) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .8; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- SEÇÃO HERO (TOPO) -->
+    <section class="relative overflow-hidden bg-white pt-16 pb-20 lg:pt-24">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Badge -->
+                <span class="inline-flex items-center justify-center rounded-full bg-blue-100 px-4 py-1.5 text-sm font-semibold text-blue-700 mb-6 shadow-sm">
+                    🔥 Mais de 10.000 pessoas já garantiram o kit
+                </span>
+                
+                <!-- Título -->
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight text-gray-900 tracking-tight">
+                    Inglês de Bolso <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Kit de Sobrevivência</span>
+                </h1>
+                
+                <!-- Subtítulo -->
+                <p class="text-lg md:text-xl mb-10 text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    O inglês prático que você precisa para emergências reais, viagens, entrevistas, atendimento médico e imprevistos.
+                </p>
+
+                <!-- Benefícios (Checkmarks) -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+                    <div class="flex items-center gap-2 text-gray-700 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 fill-blue-50"></i>
+                        <span>Frases prontas para usar</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-700 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 fill-blue-50"></i>
+                        <span>Áudio com pronúncia correta</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-700 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 fill-blue-50"></i>
+                        <span>Acesso imediato</span>
+                    </div>
+                </div>
+
+                <!-- Botão CTA -->
+                <a href="https://mpago.li/2KpPpbh" target="_blank" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-xl hover:bg-blue-700 hover:scale-105 shadow-lg hover:shadow-blue-500/30 group">
+                    Quero garantir meu Kit agora
+                    <i data-lucide="arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <p class="mt-4 text-sm text-gray-500 font-medium">⚡ Oferta por tempo limitado</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO ESTATÍSTICAS (FAIXA PRETA) -->
+    <section class="py-10 bg-gray-900 text-white border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black text-yellow-400 mb-1">10.000+</div>
+                    <div class="text-sm font-medium text-gray-400 uppercase tracking-wider">Kits Entregues</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black text-yellow-400 mb-1">100%</div>
+                    <div class="text-sm font-medium text-gray-400 uppercase tracking-wider">Prático e Direto</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black text-yellow-400 mb-1">24h</div>
+                    <div class="text-sm font-medium text-gray-400 uppercase tracking-wider">Acesso Imediato</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SITUAÇÕES (CARDS) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-600 uppercase bg-blue-50 rounded-full">
+                    Para Todas as Situações
+                </span>
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Você já passou por isso?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Situações reais onde o inglês faz toda a diferença na sua vida.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Card 1 -->
+                <div class="group p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i data-lucide="plane" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Viagens</h3>
+                    <p class="text-gray-600 leading-relaxed">Aeroporto, hotel, restaurante - comunique-se com confiança e evite perrengues.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i data-lucide="briefcase" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Trabalho</h3>
+                    <p class="text-gray-600 leading-relaxed">Reuniões, e-mails, apresentações. Destaque-se profissionalmente agora.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i data-lucide="stethoscope" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Saúde</h3>
+                    <p class="text-gray-600 leading-relaxed">Descreva sintomas e entenda diagnósticos com clareza em emergências.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-purple-200 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i data-lucide="message-square" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Entrevistas</h3>
+                    <p class="text-gray-600 leading-relaxed">Impressione recrutadores com respostas fluentes e preparadas.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="group p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-green-200 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i data-lucide="hotel" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Imprevistos</h3>
+                    <p class="text-gray-600 leading-relaxed">Resolva problemas em hotéis, restaurantes e eventos sem complicações.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO POR QUE FUNCIONA -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Por Que o Inglês de Bolso Funciona?</h2>
+                <p class="text-lg text-gray-600">Método prático e direto, sem enrolação.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i data-lucide="zap" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Resultados Imediatos</h3>
+                    <p class="text-sm text-gray-600">Frases prontas para usar agora mesmo.</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i data-lucide="clock" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Aprenda em Minutos</h3>
+                    <p class="text-sm text-gray-600">Sem gramática complicada, direto ao ponto.</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Método Comprovado</h3>
+                    <p class="text-sm text-gray-600">Testado e aprovado por +10.000 alunos.</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i data-lucide="download" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Acesso Vitalício</h3>
+                    <p class="text-sm text-gray-600">Baixe e tenha o material para sempre com você.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DEPOIMENTOS -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Veja o Que Dizem Nossos Alunos</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Depoimento 1 -->
+                <div class="p-8 bg-white rounded-2xl shadow-lg border border-gray-100 relative">
+                    <div class="flex gap-1 mb-4 text-yellow-400">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic text-lg">"Salvou minha viagem! Consegui resolver tudo no aeroporto sem passar vergonha. As frases de áudio ajudaram muito na pronúncia."</p>
+                    <div class="flex items-center gap-4 border-t border-gray-100 pt-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg">MS</div>
+                        <div>
+                            <div class="font-bold text-gray-900">Mariana Silva</div>
+                            <div class="text-sm text-gray-500">Executiva</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="p-8 bg-white rounded-2xl shadow-lg border border-gray-100 relative">
+                    <div class="flex gap-1 mb-4 text-yellow-400">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic text-lg">"Passei na entrevista para o intercâmbio! O material é sensacional, direto ao ponto e me deu a segurança que eu precisava."</p>
+                    <div class="flex items-center gap-4 border-t border-gray-100 pt-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center text-white font-bold text-lg">AP</div>
+                        <div>
+                            <div class="font-bold text-gray-900">Ana Paula</div>
+                            <div class="text-sm text-gray-500">Estudante</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CTA FINAL (PREÇO) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="rounded-3xl p-8 md:p-12 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 shadow-2xl text-center transform transition-transform hover:scale-[1.02] duration-300">
+                    
+                    <div class="flex items-center justify-center gap-3 mb-6 text-white">
+                        <i data-lucide="zap" class="w-8 h-8 animate-pulse"></i>
+                        <h2 class="text-3xl md:text-5xl font-black drop-shadow-md uppercase">Última Chance!</h2>
+                        <i data-lucide="zap" class="w-8 h-8 animate-pulse"></i>
+                    </div>
+
+                    <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/30">
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-4">
+                            <span class="text-2xl md:text-3xl text-white/80 line-through font-semibold">R$ 197</span>
+                            <i data-lucide="arrow-right" class="hidden md:block w-8 h-8 text-white"></i>
+                            <span class="text-6xl md:text-8xl font-black text-white drop-shadow-xl">R$ 70</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2 text-white font-bold text-lg bg-red-600/80 px-4 py-1 rounded-full shadow-sm">
+                            <i data-lucide="clock" class="w-5 h-5"></i>
+                            <span>64% DE DESCONTO - SÓ HOJE!</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+                        <div class="bg-black/10 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-white mx-auto mb-1"></i>
+                            <p class="text-white font-bold text-sm">+10.000 Vendidos</p>
+                        </div>
+                        <div class="bg-black/10 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+                            <i data-lucide="award" class="w-6 h-6 text-white mx-auto mb-1"></i>
+                            <p class="text-white font-bold text-sm">Satisfação Garantida</p>
+                        </div>
+                        <div class="bg-black/10 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-white mx-auto mb-1"></i>
+                            <p class="text-white font-bold text-sm">Resultado Imediato</p>
+                        </div>
+                    </div>
+
+                    <a href="https://mpago.li/2KpPpbh" target="_blank" class="inline-flex items-center justify-center w-full py-5 text-xl md:text-2xl font-black text-orange-600 bg-white rounded-xl hover:bg-gray-50 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                        <i data-lucide="shopping-cart" class="mr-3 w-6 h-6 md:w-8 md:h-8"></i>
+                        GARANTIR MEU KIT AGORA!
+                        <i data-lucide="arrow-right" class="ml-3 w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    
+                    <p class="text-white/90 text-sm font-medium mt-6 flex items-center justify-center gap-2">
+                        <i data-lucide="lock" class="w-4 h-4"></i> Pagamento 100% Seguro | ⚡ Acesso Imediato
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-10 bg-gray-900 text-gray-400 text-center border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <p class="text-sm mb-2 font-medium text-white">© 2024 Inglês de Bolsa. Todos os direitos reservados.</p>
+            <p class="text-xs opacity-70">Aprenda inglês de forma prática e eficiente para situações reais.</p>
+        </div>
+    </footer>
+
+    <!-- Script para ativar os ícones -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
