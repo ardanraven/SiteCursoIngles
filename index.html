@@ -1,315 +1,406 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inglês de Bolso - Kit de Sobrevivência</title>
-    <meta name="description" content="O inglês prático que você precisa para emergências reais.">
-    
-    <!-- Fonte Inter (Google Fonts) para ficar bonito e legível -->
+    <title>Inglês de Bolso | Kit de Sobrevivência</title>
+    <meta name="description" content="O guia definitivo para destravar seu inglês em situações reais. Acesso imediato.">
+
+    <!-- Fonte Moderna: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS (Estilização) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Ícones Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Configurações Personalizadas do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'scroll': 'scroll 40s linear infinite', 
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' }, 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
+        /* Gradiente do texto */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Fundo com grid sutil */
+        .bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Pausa a animação ao passar o mouse */
+        .pause-on-hover:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Esconde a barra de rolagem horizontal se aparecer */
         body {
-            font-family: 'Inter', sans-serif;
-        }
-        .animate-pulse-slow {
-            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: .8; }
+            overflow-x: hidden;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="bg-gray-50 text-gray-900 font-sans antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- SEÇÃO HERO (TOPO) -->
-    <section class="relative overflow-hidden bg-white pt-16 pb-20 lg:pt-24">
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <!-- Badge -->
-                <span class="inline-flex items-center justify-center rounded-full bg-blue-100 px-4 py-1.5 text-sm font-semibold text-blue-700 mb-6 shadow-sm">
-                    🔥 Mais de 10.000 pessoas já garantiram o kit
-                </span>
+    <!-- HERO SECTION -->
+    <header class="relative bg-slate-900 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-grid opacity-20"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-transparent to-slate-900"></div>
+        
+        <div class="absolute top-[-10%] left-[20%] w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-pulse"></div>
+        <div class="absolute bottom-[-10%] right-[20%] w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-pulse"></div>
+
+        <div class="container mx-auto px-4 pt-20 pb-24 relative z-10">
+            <div class="max-w-5xl mx-auto text-center flex flex-col items-center">
                 
-                <!-- Título -->
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight text-gray-900 tracking-tight">
-                    Inglês de Bolso <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Kit de Sobrevivência</span>
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-8 animate-float">
+                    <div class="flex -space-x-2">
+                        <div class="w-6 h-6 rounded-full bg-yellow-400 border-2 border-slate-900"></div>
+                        <div class="w-6 h-6 rounded-full bg-green-400 border-2 border-slate-900"></div>
+                        <div class="w-6 h-6 rounded-full bg-blue-400 border-2 border-slate-900"></div>
+                    </div>
+                    <span class="text-sm font-medium text-blue-200">+10.000 alunos satisfeitos</span>
+                    <span class="flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                    Não Trave Nunca Mais no <br>
+                    <span class="text-gradient">Inglês em Viagens</span>
                 </h1>
-                
-                <!-- Subtítulo -->
-                <p class="text-lg md:text-xl mb-10 text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    O inglês prático que você precisa para emergências reais, viagens, entrevistas, atendimento médico e imprevistos.
+
+                <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto font-light">
+                    O <strong class="text-white font-semibold">Kit de Sobrevivência</strong> definitivo para emergências, trabalho e lazer. Frases prontas, áudio nativo e zero enrolação.
                 </p>
 
-                <!-- Benefícios (Checkmarks) -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-                    <div class="flex items-center gap-2 text-gray-700 font-medium">
-                        <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 fill-blue-50"></i>
-                        <span>Frases prontas para usar</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-gray-700 font-medium">
-                        <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 fill-blue-50"></i>
-                        <span>Áudio com pronúncia correta</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-gray-700 font-medium">
-                        <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 fill-blue-50"></i>
-                        <span>Acesso imediato</span>
-                    </div>
-                </div>
-
-                <!-- Botão CTA -->
-                <a href="https://mpago.li/2KpPpbh" target="_blank" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-xl hover:bg-blue-700 hover:scale-105 shadow-lg hover:shadow-blue-500/30 group">
-                    Quero garantir meu Kit agora
-                    <i data-lucide="arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                </a>
-                <p class="mt-4 text-sm text-gray-500 font-medium">⚡ Oferta por tempo limitado</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO ESTATÍSTICAS (FAIXA PRETA) -->
-    <section class="py-10 bg-gray-900 text-white border-t border-gray-800">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24">
-                <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-black text-yellow-400 mb-1">10.000+</div>
-                    <div class="text-sm font-medium text-gray-400 uppercase tracking-wider">Kits Entregues</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-black text-yellow-400 mb-1">100%</div>
-                    <div class="text-sm font-medium text-gray-400 uppercase tracking-wider">Prático e Direto</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-black text-yellow-400 mb-1">24h</div>
-                    <div class="text-sm font-medium text-gray-400 uppercase tracking-wider">Acesso Imediato</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO SITUAÇÕES (CARDS) -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <span class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-600 uppercase bg-blue-50 rounded-full">
-                    Para Todas as Situações
-                </span>
-                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Você já passou por isso?</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Situações reais onde o inglês faz toda a diferença na sua vida.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Card 1 -->
-                <div class="group p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
-                        <i data-lucide="plane" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Viagens</h3>
-                    <p class="text-gray-600 leading-relaxed">Aeroporto, hotel, restaurante - comunique-se com confiança e evite perrengues.</p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="group p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
-                        <i data-lucide="briefcase" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Trabalho</h3>
-                    <p class="text-gray-600 leading-relaxed">Reuniões, e-mails, apresentações. Destaque-se profissionalmente agora.</p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="group p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
-                        <i data-lucide="stethoscope" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Saúde</h3>
-                    <p class="text-gray-600 leading-relaxed">Descreva sintomas e entenda diagnósticos com clareza em emergências.</p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="group p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-purple-200 transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
-                        <i data-lucide="message-square" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Entrevistas</h3>
-                    <p class="text-gray-600 leading-relaxed">Impressione recrutadores com respostas fluentes e preparadas.</p>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="group p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-green-200 transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
-                        <i data-lucide="hotel" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Imprevistos</h3>
-                    <p class="text-gray-600 leading-relaxed">Resolva problemas em hotéis, restaurantes e eventos sem complicações.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO POR QUE FUNCIONA -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Por Que o Inglês de Bolso Funciona?</h2>
-                <p class="text-lg text-gray-600">Método prático e direto, sem enrolação.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <div class="text-center p-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <i data-lucide="zap" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Resultados Imediatos</h3>
-                    <p class="text-sm text-gray-600">Frases prontas para usar agora mesmo.</p>
-                </div>
-                <div class="text-center p-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <i data-lucide="clock" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Aprenda em Minutos</h3>
-                    <p class="text-sm text-gray-600">Sem gramática complicada, direto ao ponto.</p>
-                </div>
-                <div class="text-center p-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Método Comprovado</h3>
-                    <p class="text-sm text-gray-600">Testado e aprovado por +10.000 alunos.</p>
-                </div>
-                <div class="text-center p-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <i data-lucide="download" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Acesso Vitalício</h3>
-                    <p class="text-sm text-gray-600">Baixe e tenha o material para sempre com você.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO DEPOIMENTOS -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Veja o Que Dizem Nossos Alunos</h2>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Depoimento 1 -->
-                <div class="p-8 bg-white rounded-2xl shadow-lg border border-gray-100 relative">
-                    <div class="flex gap-1 mb-4 text-yellow-400">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic text-lg">"Salvou minha viagem! Consegui resolver tudo no aeroporto sem passar vergonha. As frases de áudio ajudaram muito na pronúncia."</p>
-                    <div class="flex items-center gap-4 border-t border-gray-100 pt-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg">MS</div>
-                        <div>
-                            <div class="font-bold text-gray-900">Mariana Silva</div>
-                            <div class="text-sm text-gray-500">Executiva</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Depoimento 2 -->
-                <div class="p-8 bg-white rounded-2xl shadow-lg border border-gray-100 relative">
-                    <div class="flex gap-1 mb-4 text-yellow-400">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic text-lg">"Passei na entrevista para o intercâmbio! O material é sensacional, direto ao ponto e me deu a segurança que eu precisava."</p>
-                    <div class="flex items-center gap-4 border-t border-gray-100 pt-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center text-white font-bold text-lg">AP</div>
-                        <div>
-                            <div class="font-bold text-gray-900">Ana Paula</div>
-                            <div class="text-sm text-gray-500">Estudante</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO CTA FINAL (PREÇO) -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto">
-                <div class="rounded-3xl p-8 md:p-12 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 shadow-2xl text-center transform transition-transform hover:scale-[1.02] duration-300">
-                    
-                    <div class="flex items-center justify-center gap-3 mb-6 text-white">
-                        <i data-lucide="zap" class="w-8 h-8 animate-pulse"></i>
-                        <h2 class="text-3xl md:text-5xl font-black drop-shadow-md uppercase">Última Chance!</h2>
-                        <i data-lucide="zap" class="w-8 h-8 animate-pulse"></i>
-                    </div>
-
-                    <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/30">
-                        <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-4">
-                            <span class="text-2xl md:text-3xl text-white/80 line-through font-semibold">R$ 197</span>
-                            <i data-lucide="arrow-right" class="hidden md:block w-8 h-8 text-white"></i>
-                            <span class="text-6xl md:text-8xl font-black text-white drop-shadow-xl">R$ 70</span>
-                        </div>
-                        <div class="inline-flex items-center gap-2 text-white font-bold text-lg bg-red-600/80 px-4 py-1 rounded-full shadow-sm">
-                            <i data-lucide="clock" class="w-5 h-5"></i>
-                            <span>64% DE DESCONTO - SÓ HOJE!</span>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-                        <div class="bg-black/10 backdrop-blur-sm rounded-lg p-3 border border-white/10">
-                            <i data-lucide="trending-up" class="w-6 h-6 text-white mx-auto mb-1"></i>
-                            <p class="text-white font-bold text-sm">+10.000 Vendidos</p>
-                        </div>
-                        <div class="bg-black/10 backdrop-blur-sm rounded-lg p-3 border border-white/10">
-                            <i data-lucide="award" class="w-6 h-6 text-white mx-auto mb-1"></i>
-                            <p class="text-white font-bold text-sm">Satisfação Garantida</p>
-                        </div>
-                        <div class="bg-black/10 backdrop-blur-sm rounded-lg p-3 border border-white/10">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-white mx-auto mb-1"></i>
-                            <p class="text-white font-bold text-sm">Resultado Imediato</p>
-                        </div>
-                    </div>
-
-                    <a href="https://mpago.li/2KpPpbh" target="_blank" class="inline-flex items-center justify-center w-full py-5 text-xl md:text-2xl font-black text-orange-600 bg-white rounded-xl hover:bg-gray-50 shadow-xl hover:shadow-2xl transition-all duration-300 group">
-                        <i data-lucide="shopping-cart" class="mr-3 w-6 h-6 md:w-8 md:h-8"></i>
-                        GARANTIR MEU KIT AGORA!
-                        <i data-lucide="arrow-right" class="ml-3 w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform"></i>
+                <div class="flex flex-col items-center w-full max-w-md gap-4">
+                    <a href="https://mpago.li/2KpPpbh" target="_blank" class="group relative w-full flex items-center justify-center px-8 py-5 text-xl font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-[0_20px_50px_rgba(59,130,246,0.5)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.7)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        <div class="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transform skew-x-12 group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                        <span class="relative z-10 flex items-center gap-3">
+                            QUERO ACESSO AGORA
+                            <i data-lucide="arrow-right" class="w-6 h-6 group-hover:translate-x-1 transition-transform"></i>
+                        </span>
                     </a>
-                    
-                    <p class="text-white/90 text-sm font-medium mt-6 flex items-center justify-center gap-2">
-                        <i data-lucide="lock" class="w-4 h-4"></i> Pagamento 100% Seguro | ⚡ Acesso Imediato
+                    <p class="text-sm text-slate-400 flex items-center gap-1.5">
+                        <i data-lucide="lock" class="w-3 h-3 text-green-400"></i> Acesso Vitalício + Garantia de 7 dias
                     </p>
                 </div>
             </div>
         </div>
+
+        <div class="border-t border-white/10 bg-black/20 backdrop-blur-sm">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex flex-wrap justify-center gap-8 md:gap-16 text-sm md:text-base font-medium text-slate-300">
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-400"></i><span>100% Prático</span></div>
+                    <div class="flex items-center gap-2"><i data-lucide="mic" class="w-5 h-5 text-blue-400"></i><span>Áudios de Pronúncia</span></div>
+                    <div class="flex items-center gap-2"><i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i><span>Acesse do Celular</span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO PROBLEMAS -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">O Medo de Falar Inglês <br><span class="text-red-600 decoration-red-200 underline decoration-4 underline-offset-4">Te Paralisa?</span></h2>
+                <p class="text-lg text-slate-600">Imagine estar em um país estranho e não conseguir pedir ajuda, comida ou um táxi. O Inglês de Bolso resolve isso para você:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative bg-slate-50 hover:bg-white p-8 rounded-3xl transition-all duration-300 hover:shadow-2xl border border-slate-200 hover:border-blue-500">
+                    <div class="absolute top-0 right-0 bg-blue-100 w-24 h-24 rounded-bl-full opacity-50 transition-colors group-hover:bg-blue-500/10"></div>
+                    <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 text-blue-600 group-hover:scale-110 transition-transform duration-300"><i data-lucide="plane-landing" class="w-7 h-7"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Viagens Sem Stress</h3>
+                    <p class="text-slate-600">Imigração, hotel, restaurante. Tenha a frase certa na ponta da língua (e no bolso) para nunca mais passar perrengue.</p>
+                </div>
+                <div class="group relative bg-slate-50 hover:bg-white p-8 rounded-3xl transition-all duration-300 hover:shadow-2xl border border-slate-200 hover:border-blue-500">
+                    <div class="absolute top-0 right-0 bg-purple-100 w-24 h-24 rounded-bl-full opacity-50 transition-colors group-hover:bg-purple-500/10"></div>
+                    <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 text-purple-600 group-hover:scale-110 transition-transform duration-300"><i data-lucide="briefcase" class="w-7 h-7"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Carreira & Trabalho</h3>
+                    <p class="text-slate-600">Precisa enviar um e-mail urgente ou participar de uma call? Copie, cole e fale com profissionalismo instantâneo.</p>
+                </div>
+                <div class="group relative bg-slate-50 hover:bg-white p-8 rounded-3xl transition-all duration-300 hover:shadow-2xl border border-slate-200 hover:border-blue-500">
+                    <div class="absolute top-0 right-0 bg-red-100 w-24 h-24 rounded-bl-full opacity-50 transition-colors group-hover:bg-red-500/10"></div>
+                    <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 text-red-600 group-hover:scale-110 transition-transform duration-300"><i data-lucide="heart-pulse" class="w-7 h-7"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Emergências Médicas</h3>
+                    <p class="text-slate-600">Saúde não espera. Saiba explicar exatamente o que você está sentindo para um médico ou farmacêutico.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="py-10 bg-gray-900 text-gray-400 text-center border-t border-gray-800">
-        <div class="container mx-auto px-4">
-            <p class="text-sm mb-2 font-medium text-white">© 2024 Inglês de Bolsa. Todos os direitos reservados.</p>
-            <p class="text-xs opacity-70">Aprenda inglês de forma prática e eficiente para situações reais.</p>
+    <!-- SEÇÃO O QUE VOCÊ LEVA -->
+    <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4b5563 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <span class="text-blue-400 font-bold tracking-wider uppercase text-sm mb-2 block">O Segredo Revelado</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                        Não é curso.<br> É <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Inteligência Prática.</span>
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 text-blue-400 border border-blue-500/30"><i data-lucide="book-open" class="w-6 h-6"></i></div>
+                            <div><h4 class="text-xl font-bold mb-1">Guia PDF Completo</h4><p class="text-slate-400">Organizado por situações. É só buscar o que precisa e usar.</p></div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center flex-shrink-0 text-teal-400 border border-teal-500/30"><i data-lucide="headphones" class="w-6 h-6"></i></div>
+                            <div><h4 class="text-xl font-bold mb-1">Áudios Nativos</h4><p class="text-slate-400">Treine seu ouvido e sua fala com a pronúncia exata de cada frase.</p></div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 text-purple-400 border border-purple-500/30"><i data-lucide="infinity" class="w-6 h-6"></i></div>
+                            <div><h4 class="text-xl font-bold mb-1">Atualizações Gratuitas</h4><p class="text-slate-400">Comprou uma vez, é seu para sempre. Incluindo novidades.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <div class="relative mx-auto w-full max-w-md">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
+                        <div class="relative bg-slate-800 border border-slate-700 rounded-3xl p-8 shadow-2xl">
+                            <div class="flex items-center justify-between mb-8 border-b border-slate-700 pb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <span class="text-xs font-mono text-slate-500">ingles_de_bolso.pdf</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-lg bg-slate-900/50 border-l-4 border-blue-500">
+                                    <p class="text-xs text-blue-400 font-bold uppercase mb-1">No Restaurante</p>
+                                    <p class="text-white font-medium">"I'd like to order the steak, please."</p>
+                                    <p class="text-slate-500 text-sm italic">Eu gostaria de pedir o bife, por favor.</p>
+                                </div>
+                                <div class="p-4 rounded-lg bg-slate-900/50 border-l-4 border-green-500">
+                                    <p class="text-xs text-green-400 font-bold uppercase mb-1">Na Imigração</p>
+                                    <p class="text-white font-medium">"I'm here for tourism/business."</p>
+                                    <p class="text-slate-500 text-sm italic">Estou aqui a turismo/negócios.</p>
+                                </div>
+                                <div class="p-4 rounded-lg bg-slate-900/50 border-l-4 border-red-500">
+                                    <p class="text-xs text-red-400 font-bold uppercase mb-1">Urgente</p>
+                                    <p class="text-white font-medium">"I need a doctor immediately."</p>
+                                    <p class="text-slate-500 text-sm italic">Preciso de um médico imediatamente.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- PROVA SOCIAL (CARROSSEL INFINITO) -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-4 mb-16">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Todo Mundo Está Usando 🌎</h2>
+                <p class="text-lg text-slate-600">Veja como o Inglês de Bolso está salvando viagens e carreiras ao redor do mundo.</p>
+            </div>
+        </div>
+
+        <!-- Container do Carrossel com Overflow Hidden -->
+        <div class="relative w-full overflow-hidden">
+            <!-- Degradê nas laterais para efeito suave -->
+            <div class="absolute left-0 top-0 bottom-0 w-10 md:w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-10 md:w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Faixa de Cards (Largura infinita) -->
+            <div class="flex w-max animate-scroll pause-on-hover gap-6 py-4">
+                
+                <!-- BLOCO DE REVIEWS (ORIGINAL) -->
+                <div class="w-80 md:w-96 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex-shrink-0 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-3"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-slate-700 mb-4 italic">"Estava morrendo de medo da imigração em Londres. Usei a frase exata do guia e passei direto. Ufa!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold">MS</div>
+                        <div><p class="font-bold text-slate-900 text-sm">Mariana Silva</p><p class="text-slate-500 text-xs">Viajante</p></div>
+                    </div>
+                </div>
+
+                <div class="w-80 md:w-96 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex-shrink-0 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-3"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-slate-700 mb-4 italic">"Sou desenvolvedor e precisava me comunicar melhor em calls. As frases prontas para reuniões são ouro puro!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold">RJ</div>
+                        <div><p class="font-bold text-slate-900 text-sm">Ricardo Junior</p><p class="text-slate-500 text-xs">Dev Senior</p></div>
+                    </div>
+                </div>
+
+                <div class="w-80 md:w-96 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex-shrink-0 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-3"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-slate-700 mb-4 italic">"Precisei ir numa farmácia em Paris e não sabia explicar minha alergia. O kit me salvou de um problemão."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-700 font-bold">CL</div>
+                        <div><p class="font-bold text-slate-900 text-sm">Camila Lima</p><p class="text-slate-500 text-xs">Turista</p></div>
+                    </div>
+                </div>
+
+                <div class="w-80 md:w-96 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex-shrink-0 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-3"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-slate-700 mb-4 italic">"Tive problema com o chuveiro do hotel. Abri o PDF, achei a frase e liguei pra recepção. Resolveram na hora!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-bold">PA</div>
+                        <div><p class="font-bold text-slate-900 text-sm">Pedro Alves</p><p class="text-slate-500 text-xs">Mochileiro</p></div>
+                    </div>
+                </div>
+
+                <div class="w-80 md:w-96 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex-shrink-0 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-3"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-slate-700 mb-4 italic">"Vale muito mais do que custa. Ter o áudio junto faz toda a diferença pra gente não falar errado."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold">FB</div>
+                        <div><p class="font-bold text-slate-900 text-sm">Fernanda B.</p><p class="text-slate-500 text-xs">Estudante</p></div>
+                    </div>
+                </div>
+
+                <!-- BLOCO DE REVIEWS (DUPLICADO PARA LOOP INFINITO) -->
+                <!-- Review 1 Copy -->
+                <div class="w-80 md:w-96 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex-shrink-0 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-3"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-slate-700 mb-4 italic">"Estava morrendo de medo da imigração em Londres. Usei a frase exata do guia e passei direto. Ufa!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold">MS</div>
+                        <div><p class="font-bold text-slate-900 text-sm">Mariana Silva</p><p class="text-slate-500 text-xs">Viajante</p></div>
+                    </div>
+                </div>
+                <!-- Review 2 Copy -->
+                <div class="w-80 md:w-96 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex-shrink-0 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-3"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-slate-700 mb-4 italic">"Sou desenvolvedor e precisava me comunicar melhor em calls. As frases prontas para reuniões são ouro puro!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold">RJ</div>
+                        <div><p class="font-bold text-slate-900 text-sm">Ricardo Junior</p><p class="text-slate-500 text-xs">Dev Senior</p></div>
+                    </div>
+                </div>
+                <!-- Review 3 Copy -->
+                <div class="w-80 md:w-96 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex-shrink-0 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-3"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-slate-700 mb-4 italic">"Precisei ir numa farmácia em Paris e não sabia explicar minha alergia. O kit me salvou de um problemão."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-700 font-bold">CL</div>
+                        <div><p class="font-bold text-slate-900 text-sm">Camila Lima</p><p class="text-slate-500 text-xs">Turista</p></div>
+                    </div>
+                </div>
+                <!-- Review 4 Copy -->
+                <div class="w-80 md:w-96 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex-shrink-0 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-3"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-slate-700 mb-4 italic">"Tive problema com o chuveiro do hotel. Abri o PDF, achei a frase e liguei pra recepção. Resolveram na hora!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-bold">PA</div>
+                        <div><p class="font-bold text-slate-900 text-sm">Pedro Alves</p><p class="text-slate-500 text-xs">Mochileiro</p></div>
+                    </div>
+                </div>
+                <!-- Review 5 Copy -->
+                <div class="w-80 md:w-96 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm flex-shrink-0 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-3"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-slate-700 mb-4 italic">"Vale muito mais do que custa. Ter o áudio junto faz toda a diferença pra gente não falar errado."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold">FB</div>
+                        <div><p class="font-bold text-slate-900 text-sm">Fernanda B.</p><p class="text-slate-500 text-xs">Estudante</p></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- OFERTA IRRESISTÍVEL (FOOTER) -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-blue-900"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-30"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 text-center shadow-2xl">
+                
+                <div class="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-6 animate-bounce">
+                    OFERTA POR TEMPO LIMITADO
+                </div>
+
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-2">Tudo isso...</h2>
+                <p class="text-blue-200 text-lg mb-8">Por menos de uma pizza.</p>
+
+                <div class="flex flex-col items-center justify-center mb-10">
+                    <p class="text-slate-400 line-through text-xl mb-2">De R$ 197,00</p>
+                    <div class="flex items-end gap-2">
+                        <span class="text-4xl font-bold text-white">por apenas</span>
+                        <span class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 leading-none">70</span>
+                        <div class="flex flex-col items-start mb-2">
+                            <span class="text-xl text-white font-bold">,00</span>
+                            <span class="text-xs text-slate-300">à vista</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://mpago.li/2KpPpbh" target="_blank" class="w-full md:w-auto inline-flex items-center justify-center px-8 py-5 text-xl font-bold text-slate-900 bg-yellow-400 rounded-xl hover:bg-yellow-300 hover:scale-105 shadow-[0_0_30px_rgba(250,204,21,0.4)] transition-all duration-300 group">
+                    <i data-lucide="unlock" class="w-6 h-6 mr-2"></i>
+                    DESTRAVAR MEU INGLÊS AGORA
+                </a>
+
+                <div class="mt-8 flex flex-wrap justify-center gap-4 md:gap-8 text-sm text-slate-400">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-green-400"></i> Compra Segura
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4 text-green-400"></i> Entrega via E-mail
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Satisfação Garantida
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-600 py-8 text-center text-sm border-t border-slate-900">
+        <p>&copy; 2024 Inglês de Bolso. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Script para ativar os ícones -->
     <script>
         lucide.createIcons();
     </script>
